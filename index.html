@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      color: white;
+    }
+    #container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    #videoPlayer {
+      flex: 3;
+      max-width: 75%;
+      margin: 20px;
+    }
+    #videoList {
+      flex: 1;
+      max-width: 25%;
+      margin: 20px;
+      overflow-y: auto;
+    }
+    #videoList button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #videoList button:hover {
+      background-color: #666;
+    }
+    #downloadButton {
+      margin: 20px;
+      padding: 10px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: none;
+    }
+    #downloadButton:hover {
+      background-color: #666;
+    }
+    #fileInput {
+      margin: 20px;
+      padding: 10px;
+      background-color: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #fileInput:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="fileInput" accept="video/mp4">
+  <div id="container">
+    <video id="videoPlayer" controls>
+      <source id="videoSource" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="videoList"></div>
+  </div>
+  <button id="downloadButton">Download Video</button>
+  <script src="renderer.js"></script>
+</body>
+</html>
